@@ -1,6 +1,5 @@
 from locust import between, task, SequentialTaskSet, HttpUser
 
-
 class ViewCart(SequentialTaskSet):
     @task
     def get_all_cart_tem(self):
@@ -23,5 +22,5 @@ class MyUser(HttpUser):
     tasks = [ViewCart]
 
 
-
+#httpUser will give us a really importnat attribute called client which will allow us hit the rest api call
 
