@@ -1,6 +1,8 @@
 from locust import events
-from AbstractClass import RegisteredUser
-from AbstractClass import GuestUser
+
+from AbstractClass.Tests.CategoryNavigate import CategoryNavigate
+from AbstractClass.Users import GuestUser, RegisteredUser
+
 
 @events.test_start.add_listener
 def on_test_start(**kwargs):
@@ -14,12 +16,12 @@ def on_test_stop(**kwargs):
 
 class UserGroupA(RegisteredUser):
     weight = 1
-    RegisteredUser.tasks = []
+    RegisteredUser.tasks = [CategoryNavigate]
 
 
 class UserGroupB(GuestUser):
     weight = 4
-    GuestUser.tasks = []
+    GuestUser.tasks = [CategoryNavigate]
 
 
 

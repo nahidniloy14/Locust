@@ -1,6 +1,7 @@
 from locust import between
 
-from AbstractClass import AbstractUser
+from AbstractClass.Users import AbstractUser
+
 
 class GuestHttpUser(AbstractUser):
     wait_time = between(1, 2)

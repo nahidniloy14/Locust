@@ -1,5 +1,6 @@
-from locust import between, clients
-from AbstractClass import AbstractUser
+from locust import between
+from AbstractClass.Users import AbstractUser
+from CSV.UserLoader import UserLoader
 
 
 class RegisteredHttpUser(AbstractUser):
@@ -12,6 +13,8 @@ class RegisteredHttpUser(AbstractUser):
 
     def on_start(self):
         # TODO: Fetch one user from user list and login, store cookie and user info
+        # loginInfo=UserLoader.get_user() #export from CSV
+        # print(loginInfo)
         pass
 
     def on_stop(self):
