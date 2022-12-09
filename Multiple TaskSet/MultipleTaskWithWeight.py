@@ -37,6 +37,3 @@ class MyUser(User):
         }
 
 
-
-
-
