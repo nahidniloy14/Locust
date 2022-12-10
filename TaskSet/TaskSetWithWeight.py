@@ -1,6 +1,9 @@
-from locust import User, between, task, TaskSet
+from locust import User, between, task, TaskSet, constant
+
 
 class SearchProduct(TaskSet):
+    # weight=2
+    # wait_time=constant(2)
     @task(4)
     def search_men_products(self):
         print("Searching men products")

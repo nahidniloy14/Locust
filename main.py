@@ -1,7 +1,9 @@
-from locust import User, task, between
+from locust import User, task, between, constant
+
 
 class Myuser(User):
-    wait_time = between(1,2) #time between two execution
+    #wait_time = between(1,2) #time between two execution
+    wait_time = constant(1)
 
     @task
     def my_task1(self):
