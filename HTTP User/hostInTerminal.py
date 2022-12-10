@@ -1,3 +1,6 @@
+#httpUser will provide us a really importnat attribute called client which will allow us hit the rest api call
+#It gives us a instance of http session which will allow us to get post delete put and patch
+
 from locust import between, task, SequentialTaskSet, HttpUser
 
 class ViewCart(SequentialTaskSet):
@@ -22,5 +25,5 @@ class MyUser(HttpUser):
     tasks = [ViewCart]
 
 
-#httpUser will give us a really importnat attribute called client which will allow us hit the rest api call
+
 
