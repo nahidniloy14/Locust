@@ -24,3 +24,7 @@
    DEBUG = 2
    ERROR = 3
    CRITICAL = 4
+
+#----------Run Tags-------------
+  locust -f main.py -u 1 -r 1 -t=10s --headless --tags get
+  locust -f main.py -u 1 -r 1 -t=10s --headless --exclude-tags get
