@@ -1,3 +1,6 @@
+#on_start>> when the taskset starts executing
+#on_stop>> when the taskset stops executing
+
 from locust import SequentialTaskSet, task
 
 
@@ -5,9 +8,6 @@ class SearchProduct(SequentialTaskSet):
 
     def on_start(self):
         print("SearchProduct : Tasks execution started ..")
-
-    def on_stop(self):
-        print("SearchProduct : Tasks execution completed ..")
 
     @task
     def search_men_products(self):
@@ -20,3 +20,7 @@ class SearchProduct(SequentialTaskSet):
     @task
     def exit_task_execution(self):
         self.interrupt()
+
+    def on_stop(self):
+        print("SearchProduct : Tasks execution completed ..")
+
