@@ -10,11 +10,13 @@ class SearchProduct(SequentialTaskSet):
     def search_kids_products(self):
         print("Searching kids products")
 
+
 class MyUser(User):
+    # host if present
     wait_time = between(1, 2)
     tasks = [SearchProduct]
 
-    #----Output--------
+    # ----Output--------
 # Searching kids products
 # Searching men products
 # Searching kids products
@@ -25,4 +27,4 @@ class MyUser(User):
 # Searching men products
 # Searching kids products
 
-#the output will maintain a sequence
+# the output will maintain a sequence

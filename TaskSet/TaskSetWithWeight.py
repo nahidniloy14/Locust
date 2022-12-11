@@ -12,8 +12,9 @@ class SearchProduct(TaskSet):
     def search_kids_products(self):
         print("Searching kids products")
 
+
 class MyUser(User):
-    wait_time = between(1,2)
+    wait_time = between(1, 2)
     tasks = [SearchProduct]
 
 # Searching men products
@@ -24,5 +25,5 @@ class MyUser(User):
 # Searching men products
 # Searching men products
 
-#giving more weight to the task indicates that there are more chances to be picked up
+# giving more weight to the task indicates that there are more chances to be picked up
 # in this case Searching men products is an example

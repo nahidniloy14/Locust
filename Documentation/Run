@@ -1,7 +1,26 @@
  #------Run Locust using IDE terminal----------------
+ locust -h #will show all the available commands in locust
  locust -f main.py
- locust -f main.py -u 1 -r 1  #user=1 ,rate=1
- locust -f main.py -u 1 -r 1 --host somewebsite.com
+ locust -f main.py -u 1 -r 1
+ locust -f main.py -u 1 -r 1 -t=10s
+ locust -f main.py -u 1 -r 1 -t=10s --headless
+ locust -f main.py -u 1 -r 1 -t=10s --headless --print-stats
+ locust -f main.py -u 1 -r 1 -t=10s --headless --print-stats --csv Run.csv
+ locust -f main.py -u 1 -r 1 -t=10s --headless --print-stats --csv Run.csv --csv-full-history
+ locust -f main.py -u 1 -r 1 -t=10s --headless --print-stats --csv Run.csv --host somewebsite.com
 
- #-------Run Log File-----------------
- locust -f loggingDemo.py --host somewebsite.com --logfile run.log
+  #-u,number of user=1 ,-r,spwan rate=1
+  #--headless= everything will get printed in terminal + dont see web ui of locust
+  #-t=duration
+  #--print-stats=will print all statistics
+  #--csv Run.csv=print all the staistics in the csv file
+  #--host somewebsite.com = defines the host website
+
+  #-------Run Log File-----------------
+  locust -f loggingDemo.py --host somewebsite.com -L CRITICAL --logfile run.log --html RUN1
+  # -L
+   By default it is INFO
+   INFO = 1
+   DEBUG = 2
+   ERROR = 3
+   CRITICAL = 4

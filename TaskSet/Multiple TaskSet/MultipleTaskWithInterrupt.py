@@ -12,7 +12,7 @@ class SearchProduct(SequentialTaskSet):
 
     @task
     def exit_task_execution(self):
-        self.interrupt()
+        self.interrupt(reschedule=False)  # It will have some breath time during execution
 
 
 class ViewCart(SequentialTaskSet):
@@ -26,7 +26,7 @@ class ViewCart(SequentialTaskSet):
 
     @task
     def exit_task_execution(self):
-        self.interrupt()
+        self.interrupt(reschedule=False)#It will have some breath time during execution
 
 
 class MyUser(User):
