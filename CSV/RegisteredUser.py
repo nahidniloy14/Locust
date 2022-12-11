@@ -1,5 +1,5 @@
 from locust import between
-from AbstractClass.Users import AbstractUser
+from Abstract.Users import AbstractUser
 from CSV.UserLoader import UserLoader
 
 

@@ -2,7 +2,7 @@ from locust import HttpUser, constant, task
 
 
 class MyReqRes(HttpUser):
-    host = "https://regres.in"
+    #host = "https://regres.in"
     wait_time = constant(1)
 
     @task

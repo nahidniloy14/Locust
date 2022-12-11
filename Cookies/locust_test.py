@@ -1,7 +1,7 @@
 from locust import events
 
-from AbstractClass.Tests.CategoryNavigate import CategoryNavigate
-from AbstractClass.Users import GuestUser, RegisteredUser
+from Abstract.Tests.CategoryNavigate import CategoryNavigate
+from Abstract.Users import GuestUser, RegisteredUser
 
 
 @events.test_start.add_listener
