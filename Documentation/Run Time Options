@@ -25,6 +25,11 @@
    ERROR = 3
    CRITICAL = 4
 
-#----------Run Tags-------------
+  #----------Run Tags-------------
   locust -f main.py -u 1 -r 1 -t=10s --headless --tags get
   locust -f main.py -u 1 -r 1 -t=10s --headless --exclude-tags get
+
+  #---------config---------
+  locust -f main.py --config Configuration\locust.config
+
+
