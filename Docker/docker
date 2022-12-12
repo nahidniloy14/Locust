@@ -1,0 +1,40 @@
+#-----------------Docker-----------------------
+docker run -p 8089:8089 -v $PWD:/mnt/locust locustio/locust -f /mnt/locust/locustfile.py
+599fkjfnlabflnjnadfslnfnafmkf57446sd >> container ID
+
+#headless mode
+docker run -p 8089:8089 --mount type=bind,source=$pwd,target=/mnt/locust locustio/locust -f /mnt/locust/locustfile.
+
+docker container stop {containerID} >>stop container
+docker rm >>remove conatiner
+
+
+
+#-----------Docker In Distrubuted Load Testing-----------
+
+version: '3'
+
+services:
+  master:
+    image: locustio/locust
+    ports:
+     - "8089:8089"
+    volumes:
+      - ./:/mnt/locust
+    command: -f /mnt/locust/locustfile.py --master -H http://master:8089
+
+  worker 1:
+    image: locustio/locust
+    volumes:
+      - ./:/mnt/locust
+    command: -f /mnt/locust/locustfile.py --worker --master-host master
+
+   worker 2:
+    image: locustio/locust
+    volumes:
+      - ./:/mnt/locust
+    command: -f /mnt/locust/locustfile.py --worker --master-host master
+
+
+# docker compose up >> run the containers
+# docker compose rm >> delete the containers
