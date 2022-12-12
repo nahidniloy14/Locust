@@ -32,4 +32,6 @@
   #---------config---------
   locust -f main.py --config Configuration\locust.config
 
+  #------------Activate Virtual Environment-----------------
+  venv\scripts\activate
 
